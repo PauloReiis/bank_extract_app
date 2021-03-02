@@ -1,6 +1,7 @@
 import 'package:bank_extract_app/model/dto/login_dto.dart';
 import 'package:bank_extract_app/ui/login/controller/login_controller.dart';
 import 'package:bank_extract_app/ui/login/veiwmodel/login_viewmodel.dart';
+import 'package:bank_extract_app/util/constant/constant_image.dart';
 import 'package:bank_extract_app/util/constant/constant_mensagen.dart';
 import 'package:bank_extract_app/util/constant/constant_route.dart';
 import 'package:bank_extract_app/util/constant/constant_string.dart';
@@ -33,7 +34,7 @@ class LoginView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    icon(context),
+                    insertImage(context),
                     SizedBox(height: WidgetUtil.widthPercentage(context, 3.0)),
                     Observer(builder: (_) {
                       return user(context, enable: !_loginController.busy);
@@ -113,10 +114,12 @@ class LoginView extends StatelessWidget {
 
   /// **Conceito:** Montando Icone
   /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
-  Icon icon(BuildContext context) {
-    return Icon(
-      Icons.attach_money,
-      size: WidgetUtil.widthPercentage(context, 40.0),
+  Image insertImage(BuildContext context) {
+    return Image.asset(
+      ConstantImage.imageLogo,
+      fit: BoxFit.contain,
+      height: WidgetUtil.heightPercentage(context, 30.0),
+      alignment: Alignment.center,
     );
   }
 

@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'dart:ui';
 
+import 'package:bank_extract_app/util/constant/constant_gif.dart';
+import 'package:bank_extract_app/util/constant/constant_image.dart';
 import 'package:bank_extract_app/util/constant/constant_route.dart';
 import 'package:bank_extract_app/util/constant/constant_style.dart';
-import 'package:bank_extract_app/util/widget_util.dart';
 import 'package:flutter/material.dart';
 
 /// **Conceito:** Definindo tela de abertura do App
@@ -20,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _changeOpacity();
+    Timer(Duration(seconds: 1), () => _changeOpacity());
   }
 
   /// **Conceito:** iniciando montagem da tela
@@ -32,6 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       child: SizedBox(
         child: Stack(
           children: [
+            insertImage(),
             animatedOpacity(),
           ],
         ),
@@ -51,19 +54,31 @@ class _SplashScreenState extends State<SplashScreen> {
             .pushReplacementNamed(ConstantRoute.loginRota));
   }
 
+  /// **Conceito:** Inserir imagem na tela de Splash Screen
+  /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
+  Image insertImage() {
+    return Image.asset(
+      ConstantGif.gif_SplashCreen,
+      fit: BoxFit.cover,
+      height: double.infinity,
+      width: double.infinity,
+      alignment: Alignment.center,
+    );
+  }
+
   /// **Conceito:** Animação da tela Splash Screen
   /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
   AnimatedOpacity animatedOpacity() {
     return AnimatedOpacity(
-        duration: Duration(seconds: 3),
-        opacity: _opacityLevel,
-        child: Container(
-          alignment: Alignment.center,
-          child: Icon(
-            Icons.attach_money,
-            size: WidgetUtil.widthPercentage(
-                context, 60.0), //TODO colocar este item responsivo
-          ),
-        ));
+      duration: Duration(seconds: 3),
+      opacity: _opacityLevel,
+      child: Image.asset(
+        ConstantImage.imageLogo,
+        fit: BoxFit.scaleDown,
+        height: double.infinity,
+        width: double.infinity,
+        alignment: Alignment.center,
+      ),
+    );
   }
 }

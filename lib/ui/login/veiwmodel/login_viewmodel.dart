@@ -30,6 +30,5 @@ class LoginViewModel {
     } else {
       throw (result.msg);
     }
-    return false;
   }
 }
