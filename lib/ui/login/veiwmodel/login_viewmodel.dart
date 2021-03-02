@@ -4,9 +4,9 @@ import 'package:bank_extract_app/model/dto/login_dto.dart';
 import 'package:bank_extract_app/model/entity/login.dart';
 import 'package:flutter/material.dart';
 
-
-
-class LoginViewModel{
+/// **Conceito:** Classe para gerenciar as regras de negocio da tela de Login
+/// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
+class LoginViewModel {
   LoginService _loginService = LoginService();
   LoginRepository _loginRepository = LoginRepository();
 
@@ -17,19 +17,19 @@ class LoginViewModel{
     debugPrint("LoginViewModel => login");
     Login login = Login();
     //Fazendo chamada da API
-    var result = await _loginService.login(loginDto);
+    LoginDTO result = await _loginService.login(loginDto);
 
-      if (result.tokenAccess != null) {
-        debugPrint("Comunicação com API de Login realizada com sucesso");
-          login.name = loginDto.userName;
-          login.password = loginDto.userPassword;
-          login.tokenAccess = result.tokenAccess;
-          //Salvando no banco local os dados do acesso
-          _loginRepository.salvarDadosLogin(login);
-          return true;
-      } else {
-        throw (result.msg);
-      }
+    if (result.tokenAccess != null) {
+      debugPrint("Comunicação com API de Login realizada com sucesso");
+      login.name = loginDto.userName;
+      login.password = loginDto.userPassword;
+      login.tokenAccess = result.tokenAccess;
+      //Salvando no banco local os dados do acesso
+      _loginRepository.salvarDadosLogin(login);
+      return true;
+    } else {
+      throw (result.msg);
+    }
     return false;
   }
 }

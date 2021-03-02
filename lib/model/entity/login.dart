@@ -5,7 +5,6 @@ part 'login.g.dart';
 
 @HiveType(typeId: ConstantDb.loginId)
 class Login extends HiveObject {
-
   @HiveField(0)
   int id;
 

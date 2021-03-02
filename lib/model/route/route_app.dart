@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 
 /// **Conceito:** Iniciando rotas do App
 /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
-class RouteApp{
-
+class RouteApp {
   static final routs = <String, WidgetBuilder>{
     ConstantRoute.splashScreenRota: (BuildContext context) => SplashScreen(),
     ConstantRoute.loginRota: (BuildContext context) => LoginView(),

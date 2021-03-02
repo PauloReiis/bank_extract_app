@@ -61,7 +61,8 @@ class _SplashScreenState extends State<SplashScreen> {
           alignment: Alignment.center,
           child: Icon(
             Icons.attach_money,
-            size: WidgetUtil.widthPercentage(context, 60.0), //TODO colocar este item responsivo
+            size: WidgetUtil.widthPercentage(
+                context, 60.0), //TODO colocar este item responsivo
           ),
         ));
   }

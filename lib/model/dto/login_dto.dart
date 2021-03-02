@@ -22,16 +22,13 @@ class LoginDTO {
     if (json == null) {
       return null;
     }
-    return LoginDTO(
-        tokenAccess: json["token"]);
+    return LoginDTO(tokenAccess: json["token"]);
   }
 
   factory LoginDTO.loginErroFromJson(dynamic json) {
     if (json == null) {
       return null;
     }
-    return LoginDTO(
-        code: json["code"],
-        msg: json["msg"]);
+    return LoginDTO(code: json["code"], msg: json["msg"]);
   }
 }

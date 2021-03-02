@@ -28,7 +28,7 @@ class LoginService {
   /// **Conceito:** Tratando dados e enviado para a API
   /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
   /// **Retorno:** Objeto LoginDTO tratado
-  Future<dynamic> login(LoginDTO loginDTO) async {
+  Future<LoginDTO> login(LoginDTO loginDTO) async {
     //Verificando se tem sinal de internet
     if (!await isConnected()) {
       throw ConstantMenssage.connectionError;
