@@ -1,5 +1,5 @@
 import 'package:bank_extract_app/model/dto/login_dto.dart';
-import 'package:bank_extract_app/ui/login/controller/login_controller.dart';
+import 'package:bank_extract_app/ui/login/store/login_store.dart';
 import 'package:bank_extract_app/ui/login/veiwmodel/login_viewmodel.dart';
 import 'package:bank_extract_app/util/constant/constant_image.dart';
 import 'package:bank_extract_app/util/constant/constant_mensagen.dart';
@@ -16,7 +16,7 @@ class LoginView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final LoginViewModel _loginViewModel = LoginViewModel();
   final LoginDTO _logindto = LoginDTO();
-  final LoginController _loginController = LoginController();
+  final LoginStore _loginController = LoginStore();
 
   /// **Conceito:** Montando a tela de login
   /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0

@@ -1,12 +1,12 @@
 import 'package:mobx/mobx.dart';
 
-part 'login_controller.g.dart';
+part 'login_store.g.dart';
 
-class LoginController = ControllerBase with _$LoginController;
+class LoginStore = LoginStoreBase with _$LoginStore;
 
 /// **Conceito:** Em desenolvimento / Em teste
 /// **Autor:** Paulo Reis / **Data:** 28/02/2021 / **Versão:** 1.0
-abstract class ControllerBase with Store {
+abstract class LoginStoreBase with Store {
   @observable
   bool busy = false;
 

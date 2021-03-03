@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_controller.dart';
+part of 'login_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'login_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$LoginController on ControllerBase, Store {
-  final _$busyAtom = Atom(name: 'ControllerBase.busy');
+mixin _$LoginStore on LoginStoreBase, Store {
+  final _$busyAtom = Atom(name: 'LoginStoreBase.busy');
 
   @override
   bool get busy {
@@ -24,17 +24,17 @@ mixin _$LoginController on ControllerBase, Store {
     });
   }
 
-  final _$ControllerBaseActionController =
-      ActionController(name: 'ControllerBase');
+  final _$LoginStoreBaseActionController =
+      ActionController(name: 'LoginStoreBase');
 
   @override
   void changeState() {
-    final _$actionInfo = _$ControllerBaseActionController.startAction(
-        name: 'ControllerBase.changeState');
+    final _$actionInfo = _$LoginStoreBaseActionController.startAction(
+        name: 'LoginStoreBase.changeState');
     try {
       return super.changeState();
     } finally {
-      _$ControllerBaseActionController.endAction(_$actionInfo);
+      _$LoginStoreBaseActionController.endAction(_$actionInfo);
     }
   }
 

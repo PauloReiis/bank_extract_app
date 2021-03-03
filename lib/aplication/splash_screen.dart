@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 1), () => _changeOpacity());
+    Timer(Duration(seconds: 0), () => _changeOpacity());
   }
 
   /// **Conceito:** iniciando montagem da tela
